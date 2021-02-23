@@ -1,0 +1,26 @@
+<div class="og-unsent-shipment">
+    <div
+      class="og-shipment-header"
+      data-shipment-id="{{ order.publicId }}"
+    >
+      <div class="og-shipment-info">
+        <span class="og-shipment-on ng-binding">
+            {{SHIPMENT_UNSENT_HEADER}}</span>
+        {{ order.place | date }}
+      </div>
+      <div class="og-shipment-header-controls d-flex">
+        {% include 'send-shipment-now-button' %} 
+        {% include 'change-shipment-date' %} 
+        {% include 'skip-shipment-button' %}
+      </div>
+
+      {%include 'order-items'%}
+
+      <div class="og-shipment-footer">
+        {% include 'payment-shipping' %} 
+        {% include 'order-pricing' %}
+      </div>
+
+      {% if index == 1 %} {% include 'upsell-first-item'%} {% endif %}
+    </div>
+</div>

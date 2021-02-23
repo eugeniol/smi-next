@@ -1,0 +1,30 @@
+  <table role="grid">
+    <caption class="og-shipment-summary-pricing-caption">
+    <!-- review this A11Y_SHIPMENT_SUMMARY_PRICING_CAPTION  -->
+    </caption>
+    <tr class="og-pricing-line og-shipment-discount-total">
+      <th class="og-total-label" scope="row">{{SHIPMENT_SENT_PRICE_AUTOSAVE}}</th>
+      <td class="og-total-value">{{order.discountTotal|currency}}</td>
+    </tr>
+    <tr class="og-pricing-line og-shipment-sub-total">
+      <th class="og-total-label" scope="row">{{SHIPMENT_SENT_PRICE_SUBTOTAL}}</th>
+      <td class="og-total-value">{{$1|currency}}</td>
+    </tr>
+    <tr class="og-pricing-line og-shipment-tax-total">
+      <th class="og-total-label" scope="row">{{SHIPMENT_SENT_PRICE_TAX}}</th>
+      <td class="og-total-value">{{$1|currency}}</td>
+    </tr>
+    <tr class="og-pricing-line og-shipment-shipping-total">
+      <th class="og-total-label" scope="row">{{SHIPMENT_SENT_PRICE_SHIPPING}}</th>
+      <td class="og-total-value">{{$1|currency}}</td>
+    </tr>
+    <tr class="og-pricing-line og-shipment-total">
+      <th class="og-total-label" scope="row">{{SHIPMENT_SENT_PRICE_TOTAL}}</th>
+      <td class="og-total-value">{{$1|currency}}</td>
+    </tr>
+    <tr class="og-total-box-disclaimer">
+      <td colspan="2">
+        <small>{{TOTAL_BOX_DISCLAIMER}}</small>
+      </td>
+    </tr>
+  </table>

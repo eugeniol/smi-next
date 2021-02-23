@@ -1,0 +1,29 @@
+{
+  "name": "smi-next",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "web-dev-server --open demo/ --node-resolve",
+    "start:watch": "web-dev-server --open demo/ --node-resolve --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@ordergroove/auth": "^2.1.6",
+    "@ordergroove/smi-store": "^0.1.0",
+    "dayjs": "^1.10.4",
+    "lit-html": "^1.3.0",
+    "lit-jinja": "^0.0.4",
+    "lodash-es": "^4.17.21",
+    "lodash.memoize": "^4.1.2",
+    "lodash.pick": "^4.4.0",
+    "redux": "^4.0.1",
+    "reselect": "^4.0.0",
+    "throttle-debounce": "^2.1.0"
+  },
+  "devDependencies": {
+    "@web/dev-server": "0.1.8"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,28 @@
+<div class="container">
+<div id="og-msi">
+  <div class="og-msi">
+    {% if auth %} 
+        <section aria-labelledby="og-msi-main-title" class="og-msi-main-header">
+          <h1 id="og-msi-main-title" class="og-msi-main-title">
+            {{ MSI_MAIN_TITLE }}
+          </h1>
+          <p class="og-msi-main-text ng-scope">{{ MSI_MAIN_TEXT }}</p>
+
+          <section
+            id="og-unsent-shipments"
+            aria-labelledBy="shipments-unsent-header"
+          >
+            <h1 class="og-title" id="shipments-unsent-header">
+              {{SHIPMENTS_UNSENT_HEADER}}
+            </h1>
+            {% for order in orders %}
+              {% if order.status == 'UNSENT' %}
+                {% include 'unsent-order' %}
+              {% endif %}
+            {% endfor %}
+          </section>
+        </section>
+      </div>
+      {%endif%}
+    </div>
+  </div></div>

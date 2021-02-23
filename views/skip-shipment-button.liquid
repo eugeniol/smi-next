@@ -1,0 +1,27 @@
+  <div class="og-skip-shipment-button pe-2">
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+      data-bs-target="#og-skip-shipment-button-{{order.publicId}}">
+      {{SHIPMENT_SKIP_BUTTON}}
+    </button>
+
+    <div class="modal fade" id="og-skip-shipment-button-{{order.publicId}}" tabindex="-1"
+      aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">{{MODAL_SKIP_HEADER}}</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="{{MODAL_CLOSE}}"></button>
+          </div>
+          <div class="modal-body">
+            {{MODAL_SKIP_BODY}}
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+              {{MODAL_CANCEL_BUTTON}}
+            </button>
+            <og-skip-button order="{{order.publicId}}" class="btn btn-primary">{{MODAL_SKIP_SHIPMENT_SAVE}}</og-skip-button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,29 @@
+  <div class="og-change-shipment-date-button pe-2">
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+      data-bs-target="#og-change-date{{order.publicId}}">
+      {{SHIPMENT_CHANGE_DATE_BUTTON}}
+    </button>
+
+    <div class="modal fade" id="og-change-date{{order.publicId}}" tabindex="-1" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">{{MODAL_CHANGE_DATE_HEADER}}</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="{{MODAL_CLOSE}}"></button>
+          </div>
+          <div class="modal-body">
+            datepikckeer comming
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+              {{MODAL_CHANGE_DATE_CANCEL}}
+            </button>
+            <og-change-date-button order="{{order.publicId}}" class="btn btn-primary">
+              {{MODAL_CHANGE_DATE_SAVE}}
+            </og-change-date-button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

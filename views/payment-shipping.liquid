@@ -1,0 +1,54 @@
+{% assign paymentId = order.payment %}
+{% assign payment = paymentById[paymentId] %}
+
+{% assign shippingAddressId = order.shippingAddress%}
+{% assign shippingAddress = addressById[shippingAddressId] %}
+
+<div class="og-payment-shipping">
+  <div class="og-billing">
+    <div>
+      <div class="og-footer-header">
+        {{SHIPMENT_UNSENT_FOOTER_BILLING_HEADER}}
+      </div>
+
+      <div og-payment-id="{{payment.publicId}}">
+        <div>
+          <span class="og-payment-type">{{ payment.ccType }}</span>
+          {% if payment.ccNumberEnding %}
+            <span class="og-payment-last-4">
+              {{ "FORM_BILLING_ENDING_IN" | translate: payment }}
+            </span>
+          {% endif %}
+        </div>
+        <div class="og-payment-expiration-date">
+          {% if payment.publicId %}
+          {{"FORM_BILLING_EXPIRATION_DATE"|translate: payment}}
+          {%endif%}
+        </div>
+      </div>
+
+      <a class="og-edit-payment" href="javascript:void(0);">
+        {{SHIPMENT_UNSENT_FOOTER_BILLING_EDIT}}
+      </a>
+    </div>
+  </div>
+  <div class="og-shipping">
+    <div>
+      <div class="og-footer-header">
+        {{SHIPMENT_UNSENT_FOOTER_SHIPPING_HEADER}}
+      </div>
+      <div og-address-id="{{shippingAddress.publicId}}">
+        <div class="og-address-name">{{shippingAddress.firstName}} {{shippingAddress.lastName}}</div>
+        <div class="og-address-line-1">{{shippingAddress.address}}</div>
+        <div class="og-address-line-2">{{shippingAddress.address2}}</div>
+        <div class="og-address-city-state-zip">
+          {{shippingAddress.city}}, {{shippingAddress.stateProvinceCode}}
+          {{shippingAddress.zipPostalCode}}
+        </div>
+      </div>
+      <a class="og-edit-shipping" href="javascript:void(0);">
+        {{SHIPMENT_UNSENT_FOOTER_SHIPPING_EDIT}}
+      </a>
+    </div>
+  </div>
+</div>

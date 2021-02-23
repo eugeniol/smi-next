@@ -1,0 +1,26 @@
+
+<div class="og-product-image-container">
+  <img
+    class="og-product-image"
+    loading="lazy"
+    alt="{{ product.name }}"
+    src="{{ product.imageUrl | ifDefined }}"
+    width="200"
+    height="200"
+  />
+</div>
+
+<div class="og-description-and-controls">
+  <div class="og-product-description">
+    <h3 class="og-product-name">
+      <a href="{{ product.detailUrl | ifDefined }}">{{{product.name}}}</a>
+    </h3>
+
+    {{ product.displayName }}
+
+    <div class="og-sku-swap-wrapper ng-scope">
+      <og-sku-swap subscription="{{ orderItem.subscription }}"></og-sku-swap>
+    </div>
+  </div>
+</div>
+

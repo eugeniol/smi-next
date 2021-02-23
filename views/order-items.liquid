@@ -1,0 +1,41 @@
+{% assign orderId = order.publicId %}
+{% assign orderItems = itemsByOrder[orderId] %}
+
+{% for orderItem in orderItems %}
+    {% assign productId = orderItem.product %}
+    {% assign product = productById[productId] %}
+    <div class="" og-item-id="{{orderItem.publicId}}" og-subscription-id="{{orderItem.subscription}}">
+        <div class="og-product-info-upcoming">
+            {% if product %}
+                {% include 'product-image' %}
+                {% include 'sku-swap' %}
+            {% endif %}
+            <div class="og-price">
+                {% if orderItem.showOriginalPrice %}
+                    <span class="og-strike og-base-unit-price" style="text-decoration: line-through">
+                        {{orderItem.price|currency}}
+                    </span>
+                {% endif %}
+                <span class="og-final-unit-price">
+                    {{orderItem.totalPrice|currency}}
+                </span>
+            <span>
+                {{PRODUCT_PRICE_EACH}}
+            </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="og-freq-quantity-controls">
+        <div class="og-quantity og-wrapper">
+            {{ITEM_CONTROLS_SENDING}}
+            <og-subscription-quantity subscription="{{orderItem.subscription}}"></subscription-quantity>
+        </div>
+        <div class="og-freq og-wrapper">
+            {{ITEM_CONTROLS_EVERY}}
+            <og-subscription-frequency subscription="{{orderItem.subscription}}"></og-subscription-frequency>
+        </div>
+        {% if !orderItem.subscription %}
+        {% endif %}
+    </div>
+{% endfor%}
